@@ -1,0 +1,29 @@
+{
+  "name": "webpack-css",
+  "version": "1.0.0",
+  "description": "webpack  css px-rem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wujincun/webpack-css.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "wujincun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wujincun/webpack-css/issues"
+  },
+  "homepage": "https://github.com/wujincun/webpack-css#readme",
+  "devDependencies": {
+    "css-loader": "^0.26.1",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0"
+  }
+}
