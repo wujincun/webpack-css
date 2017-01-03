@@ -10,7 +10,7 @@ var config = {
     entry: [
         'webpack/hot/dev-server',
         //path.join(__dirname, 'src', 'main'),
-        path.join(__dirname, 'css', 'lucyBagH5.css')
+        path.join(__dirname, 'css', 'lucyBagH5.less')
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -29,7 +29,7 @@ var config = {
             },
             {
                 test: /\.less$/,
-                loader:  ExtractTextPlugin.extract("style-loader","css-loader!less-loader","postcss-loader")
+                loader:  ExtractTextPlugin.extract("style-loader","css-loader!postcss-loader!less-loader")
             },
             { 
                 test: /\.scss$/, 
