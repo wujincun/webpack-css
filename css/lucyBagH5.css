@@ -120,6 +120,11 @@ a {
     right: 268px;
   }
 }
+@keyframes text {
+  0% {
+    transform: translate(50%, 50%);
+  }
+}
 .part .hrefArea {
   display: inline-block;
   height: 112px;
@@ -137,10 +142,12 @@ a {
 .part .hrefArea .leftScroll {
   background: url("../img/h5/leftScroll.png") left center no-repeat;
   left: 42px;
+  background-size: contain;
 }
 .part .hrefArea .rightScroll {
   background: url("../img/h5/rightScroll.png") left center no-repeat;
   right: 38px;
+  background-size: contain;
 }
 .part .hrefArea .food,
 .part .hrefArea .song,
@@ -169,9 +176,10 @@ a {
 }
 .part1 {
   position: relative;
-  background: url("../img/h5/luckyBagH5Background_01.jpg");
+  background: url("../img/h5/luckyBagH5Background_01.jpg") center center no-repeat;
   width: 640px;
   height: 526px;
+  background-size: contain;
 }
 .part1 .rule {
   position: absolute;
@@ -185,9 +193,10 @@ a {
   border-bottom: 2px solid #91000a;
 }
 .part2 {
-  background: url("../img/h5/luckyBagH5Background_02.jpg");
+  background: url("../img/h5/luckyBagH5Background_02.jpg") center center no-repeat;
   width: 640px;
   height: 576px;
+  background-size: contain;
 }
 .part2 .gameStart {
   position: relative;
@@ -203,6 +212,7 @@ a {
   background: url("../img/h5/gameBag.png") left center no-repeat;
   width: 122px;
   height: 116px;
+  background-size: contain;
 }
 .part2 .gameStart .gameText {
   width: 356px;
@@ -211,40 +221,49 @@ a {
   margin: 44px 0 0 32px;
   overflow: hidden;
 }
+.part2 .gameStart .gameText img{
+  width: 100%;
+}
 .part2 .foodArea {
   margin-top: 110px;
 }
 .part2 .foodArea .food {
   background: url("../img/h5/food.png") center center no-repeat;
+  background-size: contain;
 }
 .part2 .songArea {
   margin-top: 127px;
 }
 .part2 .songArea .song {
   background: url("../img/h5/song.png") center center no-repeat;
+  background-size: contain;
 }
 .part3 {
-  background: url("../img/h5/luckyBagH5Background_03.jpg");
+  background: url("../img/h5/luckyBagH5Background_03.jpg") center center no-repeat;
   width: 640px;
   height: 485px;
+  background-size: contain;
 }
 .part3 .beautyArea {
   margin-top: 130px;
 }
 .part3 .beautyArea .beauty {
   background: url("../img/h5/beauty.png") center center no-repeat;
+  background-size: contain;
 }
 .part3 .kneadArea {
   margin-top: 139px;
 }
 .part3 .kneadArea .knead {
   background: url("../img/h5/knead.png") center center no-repeat;
+  background-size: contain;
 }
 .part4 {
-  background: url("../img/h5/luckyBagH5Background_04.jpg");
+  background: url("../img/h5/luckyBagH5Background_04.jpg") center center no-repeat;
   width: 640px;
   height: 301px;
   margin-top: -0.1rem;
+  background-size: contain;
 }
 .rulePop {
   display: none;
@@ -258,6 +277,7 @@ a {
 }
 .rulePop .ruleContent {
   background: url("../img/h5/rule.png") center center no-repeat;
+  background-size: contain;
   width: 525px;
   height: 612px;
   position: absolute;
@@ -273,4 +293,5 @@ a {
   background: url(../img/h5/close.png) center center no-repeat;
   width: 125px;
   height: 125px;
+  background-size: contain;
 }
