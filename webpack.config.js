@@ -24,16 +24,8 @@ var config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
-                loader:  ExtractTextPlugin.extract("style-loader","css-loader!postcss-loader")
-            },
-            {
                 test: /\.less$/,
                 loader:  ExtractTextPlugin.extract("style-loader","css-loader!postcss-loader!less-loader")
-            },
-            { 
-                test: /\.scss$/, 
-                loader: 'style-loader!css-loader!sass-loader!postcss-loader'
             },
             {
                 test: /\.(png|jpg)$/,
@@ -45,11 +37,6 @@ var config = {
         return [autoprefixer({ browsers: ['last 2 versions'] }),px2rem({remUnit: 64})];  //貌似有了vue这个没用
     },
 
-    // 服务器配置相关，自动刷新!
-    devServer: {
-        hot: true,
-        inline: true
-    },
     plugins:  [
        // new webpack.optimize.CommonsChunkPlugin('common.js'),
         new ExtractTextPlugin("luckyBagH5.css")
