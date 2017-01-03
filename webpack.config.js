@@ -9,7 +9,7 @@ var path = require('path'),
 var config = {
     entry: [
         'webpack/hot/dev-server',
-        path.join(__dirname, 'src', 'main'),
+        //path.join(__dirname, 'src', 'main'),
         path.join(__dirname, 'css', 'lucyBagH5.css')
     ],
     output: {
@@ -51,8 +51,8 @@ var config = {
         inline: true
     },
     plugins:  [
-        new webpack.optimize.CommonsChunkPlugin('common.js'),
-        new ExtractTextPlugin("lucyBagH51.css")
+       // new webpack.optimize.CommonsChunkPlugin('common.js'),
+        new ExtractTextPlugin("luckyBagH5.css")
     ]
 };
 

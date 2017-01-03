@@ -208,6 +208,7 @@ a {
 #popArea .popContentArea .popContent .close {
   position: absolute;
   background: url("../img/game/close.png") center center no-repeat;
+  background-size: 52px 52px;
   width: 122px;
   height: 122px;
 }
