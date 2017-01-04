@@ -69,6 +69,7 @@ a{ text-decoration:none;}
   0% {transform:translate(50%,50%)}
 }
 .part{
+  margin-top: -.1rem;
     .hrefArea{
       display: inline-block;
       height: 112px;
@@ -84,10 +85,12 @@ a{ text-decoration:none;}
       .leftScroll{
         background: url("../img/h5/leftScroll.png") left center no-repeat;
         left: 42px;
+        background-size: contain;
       }
       .rightScroll{
         background: url("../img/h5/rightScroll.png") left center no-repeat;
         right: 38px;
+        background-size: contain;
       }
       .food,.song,.beauty,.knead{
         height: 108px;
@@ -117,6 +120,7 @@ a{ text-decoration:none;}
   background: url("../img/h5/luckyBagH5Background_01.jpg") center center no-repeat;
   width: 640px;
   height: 526px;
+  background-size: contain;
   .rule{
     position: absolute;
     top: 24px;
@@ -133,6 +137,7 @@ a{ text-decoration:none;}
   background: url("../img/h5/luckyBagH5Background_02.jpg") center center no-repeat;
   width: 640px;
   height: 576px;
+  background-size: contain;
   .gameStart{
     position: relative;
     display: inline-block;
@@ -144,6 +149,7 @@ a{ text-decoration:none;}
       left: 356px;
       top: 0;
       background: url("../img/h5/gameBag.png") left center no-repeat;
+      background-size: contain;
       width: 122px;
       height: 116px;
     }
@@ -153,18 +159,23 @@ a{ text-decoration:none;}
               animation: gameText 2s;
       margin: 44px 0 0 32px;
       overflow: hidden;
+      img{
+        width: 355px;
+      }
     }
   }
   .foodArea{
     margin-top: 110px;
     .food{
       background: url("../img/h5/food.png") center center no-repeat;
+      background-size: 497px 108px;
     }
   }
   .songArea{
     margin-top: 127px;
     .song{
       background: url("../img/h5/song.png") center center no-repeat;
+      background-size: 497px 108px;
     }
   }
 }
@@ -172,16 +183,19 @@ a{ text-decoration:none;}
   background: url("../img/h5/luckyBagH5Background_03.jpg") center center no-repeat;
   width: 640px;
   height: 485px;
+  background-size: contain;
   .beautyArea{
     margin-top: 130px;
     .beauty{
       background: url("../img/h5/beauty.png") center center no-repeat;
+      background-size: 497px 108px;
     }
   }
   .kneadArea{
     margin-top: 139px;
     .knead{
       background: url("../img/h5/knead.png") center center no-repeat;
+      background-size: 497px 108px;
     }
   }
 
@@ -190,7 +204,7 @@ a{ text-decoration:none;}
   background: url("../img/h5/luckyBagH5Background_04.jpg") center center no-repeat;
   width: 640px;
   height: 301px;
-  margin-top: -.1rem;
+  background-size: contain;
 }
 .rulePop{
   display: none;
@@ -210,11 +224,13 @@ a{ text-decoration:none;}
     top: 50%;
     -webkit-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
+    background-size: contain;
     .close{
       position: absolute;
       top: -130px;
       right: -50px;
       background: url(../img/h5/close.png) center center no-repeat;
+      background-size: 63px 63px;
       width: 125px;
       height: 125px;
     }
