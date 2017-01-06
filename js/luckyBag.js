@@ -1,8 +1,9 @@
 /**
  * Created by Administrator on 2016/12/24.
  */
-require("./flexible.js");
-require("./zepto.min.js");
+import "./flexible.js";
+import "./jquery.js";
+const  background = require ('../img/game/background.jpg'),backgroundPlay = require ('../img/game/backgroundPlay.jpg'),bag = require ('../img/game/bag.png'),landMine = require ('../img/game/landMine.png'),child = require ('../img/game/child.png'),addScore = require ('../img/game/addScore.png'),reduceScore = require ('../img/game/reduceScore.png');
 var lucyBag = {
     $popContentArea : $('.popContentArea'),
     $restArea : $('.restArea'),
@@ -25,13 +26,13 @@ var lucyBag = {
         var _this = this;
         //加载完图片后render
         var imgs = [
-            'img/game/background.jpg',
-            'img/game/backgroundPlay.jpg',
-            'img/game/bag.png',
-            'img/game/landMine.png',
-            'img/game/child.png',
-            'img/game/addScore.png',
-            'img/game/reduceScore.png'
+            background,
+            backgroundPlay,
+            bag,
+            landMine,
+            child,
+            addScore,
+            reduceScore
         ];
         var num = imgs.length;
         for (var i = 0; i < num; i++) {
@@ -109,7 +110,7 @@ var lucyBag = {
         var _this = this;
         _this.background = {};
         _this.background.img = new Image();
-        _this.background.img.src = 'img/game/background.jpg';
+        _this.background.img.src = background;
         ctx.drawImage(_this.background.img,0,0,_this.w,_this.h)
     },
     drawBags: function (ctx) {
@@ -121,7 +122,7 @@ var lucyBag = {
         for (var i = 0; i < _this.bagNum; i++) {
             _this.bags[i] = {};
             _this.bags[i].img = new Image();
-            _this.bags[i].img.src = 'img/game/bag.png';
+            _this.bags[i].img.src = bag;
             var bagW = Math.random()*(_this.maxBagSize - _this.minBagSize) + _this.minBagSize;
             var bagH = bagW * 158/163;
             _this.bags[i].renderSize = [bagW, bagH];
@@ -141,7 +142,7 @@ var lucyBag = {
         for (var i = 0; i < _this.landmineNum; i++) {
             _this.landmines[i] = {};
             _this.landmines[i].img = new Image();
-            _this.landmines[i].img.src = 'img/game/landMine.png';
+            _this.landmines[i].img.src = landMine;
             var landmineW = Math.random()*(_this.maxLandMineSize - _this.minLandMineSize) + _this.minLandMineSize;
             var landmineH = landmineW * 169/135;
             _this.landmines[i].renderSize = [landmineW, landmineH];
@@ -156,7 +157,7 @@ var lucyBag = {
         var _this = this;
         _this.child = {};
         _this.child.img = new Image();
-        _this.child.img.src = 'img/game/child.png';
+        _this.child.img.src = child;
         _this.child.renderSize = [168*_this.w/640, 216*_this.w/640]; //168*216
         var x = (_this.w - _this.child.renderSize[0]) / 2;
         var y =  _this.h - _this.child.renderSize[1] - 54*_this.h/1136;
@@ -178,7 +179,7 @@ var lucyBag = {
             //清除
             ctx.clearRect(0, 0, _this.w, _this.h);
             //画
-            _this.background.img.src = "img/game/backgroundPlay.jpg";
+            _this.background.img.src = backgroundPlay;
             ctx.drawImage(_this.background.img,0,0,_this.w,_this.h);
             ctx.drawImage(_this.child.img, _this.child.position[0], _this.child.position[1], _this.child.renderSize[0], _this.child.renderSize[1])
             _this.loopBags(ctx);//福袋
@@ -197,7 +198,7 @@ var lucyBag = {
                     $('.score').text(_this.score);
                     var score = {};
                     score.img = new Image();
-                    score.img.src = "img/game/addScore.png";
+                    score.img.src = addScore;
                     score.renderSize = [_this.w*45/640,_this.w*27/640]; //45*27
                     score.speed = (50 * _this.h/1136)/500;
                     score.position = [_this.child.position[0] + (_this.child.renderSize[0] - score.renderSize[0])/2,_this.child.position[1]]
@@ -220,7 +221,7 @@ var lucyBag = {
                     $('.score').text(_this.score);
                     var score = {};
                     score.img = new Image();
-                    score.img.src = "img/game/reduceScore.png";
+                    score.img.src = reduceScore;
                     score.renderSize = [_this.w*64/640,_this.w*30/640]; //64*30
                     score.speed = (50 * _this.h/1136)/500;
                     score.position = [_this.child.position[0] + (_this.child.renderSize[0] - score.renderSize[0])/2,_this.child.position[1]];
@@ -247,7 +248,7 @@ var lucyBag = {
     },
     bind: function () {
         var _this = this;
-        var initX, moveY, moveX;
+        var initX,distanceX, moveY, moveX;
         canvas.addEventListener('touchstart', function (e) {
             e.preventDefault();
             moveX = initX = e.targetTouches[0].pageX;

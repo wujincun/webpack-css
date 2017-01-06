@@ -3,7 +3,7 @@
  * Created by Administrator on 2017/1/4.
  */
 import "./flexible.js";
-//import "./zepto.min.js";
+import "./jquery.js";
 var luckyBag = {
     $hrefArea : $('.hrefArea'),
     windowH : $(window).height(),
@@ -38,4 +38,4 @@ var luckyBag = {
         })
     }
 };
-luckyBag.init()
+luckyBag.init();
