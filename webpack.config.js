@@ -9,8 +9,8 @@ var path = require('path'),
 
 var config = {
     entry: [
-        path.join(__dirname, 'js', 'main'),
-        path.join(__dirname, 'css', 'main.less')
+        path.join(__dirname, 'src/js', 'main'),
+        path.join(__dirname, 'src/css', 'main.less')
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -61,7 +61,7 @@ var config = {
         new webpack.optimize.CommonsChunkPlugin('js/common.js'),
         new ExtractTextPlugin("css/main.less"),
         new htmlWebpackPlugin({
-            template: 'html-withimg-loader!' + path.resolve("index.html"),
+            template: 'html-withimg-loader!' + path.resolve("src/index.html"),
             filename: "index.html"
         })
        /* new webpack.ProvidePlugin({ //这是把jquery挂到全局上，不用每个模块都去require
