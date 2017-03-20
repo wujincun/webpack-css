@@ -10,7 +10,9 @@ var path = require('path'),
 var config = {
     entry: [
         path.join(__dirname, 'src/js', 'main'),
-        path.join(__dirname, 'src/css', 'main.less')
+        path.join(__dirname, 'src/css', 'main.less'),
+        'webpack/hot/dev-server',
+        'webpack-dev-server/client?http://localhost:8080'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -38,8 +40,8 @@ var config = {
                 loader:  "style-loader!css-loader!postcss-loader!less-loader"
             },
             {
-                test: /\.(png|jpg)$/,
-                loader: 'url-loader?limit=8192&name=../images/[hash:8].[name].[ext]'
+                test: /\.(png|jpg|gif|svg)$/,
+                loader: "url-loader?limit=8192&name=images/[hash:8].[name].[ext]!image-webpack"
             }
         ]
     },
@@ -57,12 +59,19 @@ var config = {
             px2rem({remUnit: 64})];
     },
     plugins:  [
+        //热加载
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.CommonsChunkPlugin('js/common.js'),
+
+        /*new webpack.optimize.CommonsChunkPlugin('js/common.js'),*/
         new ExtractTextPlugin("css/main.less"),
         new htmlWebpackPlugin({
             template: 'html-withimg-loader!' + path.resolve("src/index.html"),
-            filename: "index.html"
+            filename: "index.html",
+            inject:'body'/*  ,
+          minify:{
+                removeComments:true,
+                collapseWhitespace: true
+            }*/
         })
        /* new webpack.ProvidePlugin({ //这是把jquery挂到全局上，不用每个模块都去require
             "$": path.join(__dirname, 'js', 'jquery'),
