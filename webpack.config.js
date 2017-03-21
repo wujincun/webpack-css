@@ -25,20 +25,19 @@ var config = {
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
-            {
+            /*{
                 test: /\.css$/,
                 loader:  "style-loader!css-loader?importLoaders=1!postcss-loader"
-            },
-            /*生成独立css文件
+            },*/
+            //生成独立css文件
             {
                 test: /\.less$/,
                 loader:  ExtractTextPlugin.extract("style-loader","css-loader!postcss-loader!less-loader")
             },
-            */
-            {
+           /* {
                 test: /\.less$/,
                 loader:  "style-loader!css-loader!postcss-loader!less-loader"
-            },
+            },*/
             {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: "url-loader?limit=8192&name=images/[hash:8].[name].[ext]!image-webpack"
@@ -63,7 +62,7 @@ var config = {
         new webpack.HotModuleReplacementPlugin(),
 
         /*new webpack.optimize.CommonsChunkPlugin('js/common.js'),*/
-        new ExtractTextPlugin("css/main.less"),
+        new ExtractTextPlugin("css/main.css"),
         new htmlWebpackPlugin({
             template: 'html-withimg-loader!' + path.resolve("src/index.html"),
             filename: "index.html",
